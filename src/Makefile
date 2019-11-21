@@ -363,16 +363,16 @@ am__relativize = \
     dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
   done; \
   reldir="$$dir2"
-ACLOCAL = ${SHELL} /Users/freyja/Documents/HI/Rafmyntir/smileyCoin/src/build-aux/missing aclocal-1.16
+ACLOCAL = ${SHELL} /Users/freyja/Documents/HI/Rafmyntir/rafmyntir/src/build-aux/missing aclocal-1.16
 AMTAR = $${TAR-tar}
 AM_CPPFLAGS = $(INCLUDES) -I$(top_builddir)/src/obj $(BDB_CPPFLAGS) \
 	$(BOOST_CPPFLAGS) $(BOOST_INCLUDES) $(LEVELDB_CPPFLAGS) \
 	-I$(builddir) -msse2 $(BDB_CPPFLAGS)
 AM_DEFAULT_VERBOSITY = 0
 AR = /usr/bin/ar
-AUTOCONF = ${SHELL} /Users/freyja/Documents/HI/Rafmyntir/smileyCoin/src/build-aux/missing autoconf
-AUTOHEADER = ${SHELL} /Users/freyja/Documents/HI/Rafmyntir/smileyCoin/src/build-aux/missing autoheader
-AUTOMAKE = ${SHELL} /Users/freyja/Documents/HI/Rafmyntir/smileyCoin/src/build-aux/missing automake-1.16
+AUTOCONF = ${SHELL} /Users/freyja/Documents/HI/Rafmyntir/rafmyntir/src/build-aux/missing autoconf
+AUTOHEADER = ${SHELL} /Users/freyja/Documents/HI/Rafmyntir/rafmyntir/src/build-aux/missing autoheader
+AUTOMAKE = ${SHELL} /Users/freyja/Documents/HI/Rafmyntir/rafmyntir/src/build-aux/missing automake-1.16
 AWK = awk
 BDB_CPPFLAGS =  -I/opt/local/include/db53/
 BDB_LIBS = -ldb_cxx-5.3
@@ -407,7 +407,7 @@ CRYPTO_LIBS = -L/usr/local/Cellar/openssl/1.0.2t/lib -lcrypto
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -std=c++11  -Wstack-protector -fstack-protector-all -fPIE
+CXXFLAGS = -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter  -Wstack-protector -fstack-protector-all -fPIE
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -443,7 +443,7 @@ LRELEASE = /anaconda3/bin/lrelease
 LTLIBOBJS = 
 LUPDATE = /anaconda3/bin/lupdate
 MAINT = 
-MAKEINFO = ${SHELL} /Users/freyja/Documents/HI/Rafmyntir/smileyCoin/src/build-aux/missing makeinfo
+MAKEINFO = ${SHELL} /Users/freyja/Documents/HI/Rafmyntir/rafmyntir/src/build-aux/missing makeinfo
 MAKENSIS = 
 MKDIR_P = ../src/build-aux/install-sh -c -d
 MOC = /anaconda3/bin/moc
@@ -453,7 +453,7 @@ OBJCDEPMODE = depmode=gcc3
 OBJCFLAGS = -g -O2
 OBJCXX = g++
 OBJCXXDEPMODE = depmode=gcc3
-OBJCXXFLAGS = -std=c++11  -Wstack-protector -fstack-protector-all -fPIE
+OBJCXXFLAGS = -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter  -Wstack-protector -fstack-protector-all -fPIE
 OBJEXT = o
 OTOOL = 
 PACKAGE = smileycoin
@@ -503,10 +503,10 @@ VERSION = 2.2.4
 WINDOWS_BITS = 
 WINDRES = 
 XGETTEXT = /anaconda3/bin/xgettext
-abs_builddir = /Users/freyja/Documents/HI/Rafmyntir/smileyCoin/src
-abs_srcdir = /Users/freyja/Documents/HI/Rafmyntir/smileyCoin/src
-abs_top_builddir = /Users/freyja/Documents/HI/Rafmyntir/smileyCoin
-abs_top_srcdir = /Users/freyja/Documents/HI/Rafmyntir/smileyCoin
+abs_builddir = /Users/freyja/Documents/HI/Rafmyntir/rafmyntir/src
+abs_srcdir = /Users/freyja/Documents/HI/Rafmyntir/rafmyntir/src
+abs_top_builddir = /Users/freyja/Documents/HI/Rafmyntir/rafmyntir
+abs_top_srcdir = /Users/freyja/Documents/HI/Rafmyntir/rafmyntir
 ac_ct_CC = gcc
 ac_ct_CXX = g++
 ac_ct_OBJC = gcc
@@ -537,7 +537,7 @@ host_vendor = apple
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /Users/freyja/Documents/HI/Rafmyntir/smileyCoin/src/build-aux/install-sh
+install_sh = ${SHELL} /Users/freyja/Documents/HI/Rafmyntir/rafmyntir/src/build-aux/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
