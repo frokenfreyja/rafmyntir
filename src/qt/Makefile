@@ -635,7 +635,7 @@ CRYPTO_LIBS = -L/usr/local/Cellar/openssl/1.0.2t/lib -lcrypto
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter  -Wstack-protector -fstack-protector-all -fPIE
+CXXFLAGS = -std=c++11  -Wstack-protector -fstack-protector-all -fPIE
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -681,7 +681,7 @@ OBJCDEPMODE = depmode=gcc3
 OBJCFLAGS = -g -O2
 OBJCXX = g++
 OBJCXXDEPMODE = depmode=gcc3
-OBJCXXFLAGS = -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter  -Wstack-protector -fstack-protector-all -fPIE
+OBJCXXFLAGS = -std=c++11  -Wstack-protector -fstack-protector-all -fPIE
 OBJEXT = o
 OTOOL = 
 PACKAGE = smileycoin

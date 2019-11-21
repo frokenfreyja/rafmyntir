@@ -93,14 +93,22 @@ QString TransactionDesc::toHTML(CWallet *wallet, CWalletTx &wtx, int vout, int u
                 {
                     for (unsigned int nOut = 0; nOut < wtx.vout.size(); nOut++)
                     {
-                        const CTxOut& txout2 = wtx.vout[nOut];
-                        std::string hexString = HexStr(txout2.scriptPubKey);
-
-                        for(int i = 0; i<1; i++) {
-                            if(hexString.substr(0,2) == "6a") {
-                                dataStr = QString::fromStdString(hexString.substr(4, hexString.size()));
-                            }
+                      const CTxOut& txout2 = wtx.vout[nOut];
+                      std::string hexString = HexStr(txout2.scriptPubKey);
+                      for (int i=0; i<1; i++) {
+                        if (hexString.substr(0,2) == "6a") {
+                          std::string datadata = hexString.substr(4, hexString.size());
+                          int len = datadata.length();
+                          std::string newString;
+                          for(int i=0; i<len; i+=2)
+                          {
+                              string byte = datadata.substr(i,2);
+                              char chr = (char) (int)strtol(byte.c_str(), NULL, 16);
+                              newString.push_back(chr);
+                          }
+                          dataStr = QString::fromStdString(newString);
                         }
+                      }
                     }
 
                     CTxDestination address;
@@ -186,17 +194,23 @@ QString TransactionDesc::toHTML(CWallet *wallet, CWalletTx &wtx, int vout, int u
 
                 for (unsigned int nOut = 0; nOut < wtx.vout.size(); nOut++)
                 {
-                    const CTxOut& txout2 = wtx.vout[nOut];
-                    std::string hexString = HexStr(txout2.scriptPubKey);
-
-                    for(int i = 0; i<1; i++) {
-                        if(hexString.substr(0,2) == "6a") {
-                            dataStr = QString::fromStdString(hexString.substr(4, hexString.size()));
-                        }
+                  const CTxOut& txout2 = wtx.vout[nOut];
+                  std::string hexString = HexStr(txout2.scriptPubKey);
+                  for (int i=0; i<1; i++) {
+                    if (hexString.substr(0,2) == "6a") {
+                      std::string datadata = hexString.substr(4, hexString.size());
+                      int len = datadata.length();
+                      std::string newString;
+                      for(int i=0; i<len; i+=2)
+                      {
+                          string byte = datadata.substr(i,2);
+                          char chr = (char) (int)strtol(byte.c_str(), NULL, 16);
+                          newString.push_back(chr);
+                      }
+                      dataStr = QString::fromStdString(newString);
                     }
+                  }
                 }
-
-
 
                 if (!wtx.mapValue.count("to") || wtx.mapValue["to"].empty())
                 {

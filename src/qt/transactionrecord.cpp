@@ -55,11 +55,21 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
 
                 for (unsigned int nOut = 0; nOut < wtx.vout.size(); nOut++)
                 {
-                   const CTxOut& txout2 = wtx.vout[nOut];
+                    const CTxOut& txout2 = wtx.vout[nOut];
 
                     std::string hexString = HexStr(txout2.scriptPubKey);
-                    if(hexString.substr(0,2) == "6a") {
-                        sub.data = hexString.substr(4, hexString.size());
+
+                    if (hexString.substr(0,2) == "6a") {
+                      std::string datadata = hexString.substr(4, hexString.size());
+                      int len = datadata.length();
+                      std::string newString;
+                      for(int i=0; i<len; i+=2)
+                      {
+                          string byte = datadata.substr(i,2);
+                          char chr = (char) (int)strtol(byte.c_str(), NULL, 16);
+                          newString.push_back(chr);
+                      }
+                      sub.data = newString;
                     }
                 }
 
@@ -112,14 +122,24 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
 
             for (unsigned int nOut = 0; nOut < wtx.vout.size(); nOut++)
             {
-                const CTxOut& txout = wtx.vout[nOut];
-                TransactionRecord sub(hash, nTime);
-                sub.idx = parts.size();
+               const CTxOut& txout = wtx.vout[nOut];
+               TransactionRecord sub(hash, nTime);
+               sub.idx = parts.size();
 
-                std::string hexString = HexStr(txout.scriptPubKey);
-                if(hexString.substr(0,2) == "6a") {
-                    sub.data = hexString.substr(4, hexString.size());
-                }
+               std::string hexString = HexStr(txout.scriptPubKey);
+
+               if (hexString.substr(0,2) == "6a") {
+                 std::string datadata = hexString.substr(4, hexString.size());
+                 int len = datadata.length();
+                 std::string newString;
+                 for(int i=0; i<len; i+=2)
+                 {
+                     string byte = datadata.substr(i,2);
+                     char chr = (char) (int)strtol(byte.c_str(), NULL, 16);
+                     newString.push_back(chr);
+                 }
+                 sub.data = newString;
+               }
 
                 if(wallet->IsMine(txout))
                 {
