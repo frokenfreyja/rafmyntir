@@ -343,23 +343,6 @@ QString TransactionTableModel::formatTxData(const TransactionRecord *wtx) const
         return QString();
     }
 
-/*
-		if (ContainsOpReturn(tx)){
-		    return QString::fromStdString(wtx->hash.ToString());
-        }
-        else
-        {
-            for(int i=0; i<tx->vout.size(); i++) {
-                return QString::fromStdString(tx->vout[i].scriptPubKey.ToString());
-            }
-        }
-*/
-        /*
-                    for(int i=0; i<tx->vout.size(); i++) {
-                        return QString::fromStdString(tx->vout[i].scriptPubKey.ToString());
-                    }
-                    */
-
 }
 
 /* Look up address in address book, if found return label (address)
