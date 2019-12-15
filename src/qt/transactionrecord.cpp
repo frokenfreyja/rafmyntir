@@ -129,7 +129,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                TransactionRecord sub(hash, nTime);
                sub.idx = parts.size();
                std::string hexString = HexStr(txout.scriptPubKey);
-			   // If there is any data in the hexString convert it to ascii
+	       // If there is any data in the hexString convert it to ascii
                if (hexString.substr(0,2) == "6a") {
                  std::string datadata = hexString.substr(4, hexString.size());
                  int len = datadata.length();
