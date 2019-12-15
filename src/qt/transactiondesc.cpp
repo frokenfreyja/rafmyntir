@@ -103,6 +103,7 @@ QString TransactionDesc::toHTML(CWallet *wallet, CWalletTx &wtx, int vout, int u
                           for(int i=0; i<len; i+=2)
                           {
                               string byte = datadata.substr(i,2);
+				  // Write a dot(.) if the hex code stands for a control command
 				  if(byte == "00" || byte == "01" || byte == "02" || byte == "03" || byte == "04" || byte == "05" || byte == "06" || byte == "07" || byte == "08" || byte == "09" || byte == "0a" || byte == "0b" || byte == "0c" || byte == "0d" || byte == "0e" || byte == "0f" || byte == "10" || byte == "11" || byte == "12" || byte == "13" || byte == "14" || byte == "15" || byte == "16" || byte == "17" || byte == "18" || byte == "19" || byte == "1a" || byte == "1b" || byte == "1c" || byte == "1d" || byte == "1e" || byte == "1f" || byte == "20" || byte == "7f") {
                        			byte = "2e";
                       			}
@@ -207,6 +208,7 @@ QString TransactionDesc::toHTML(CWallet *wallet, CWalletTx &wtx, int vout, int u
                       for(int i=0; i<len; i+=2)
                       {
                           string byte = datadata.substr(i,2);
+			   // Write a dot(.) if the hex code stands for a control command
 			   if(byte == "00" || byte == "01" || byte == "02" || byte == "03" || byte == "04" || byte == "05" || byte == "06" || byte == "07" || byte == "08" || byte == "09" || byte == "0a" || byte == "0b" || byte == "0c" || byte == "0d" || byte == "0e" || byte == "0f" || byte == "10" || byte == "11" || byte == "12" || byte == "13" || byte == "14" || byte == "15" || byte == "16" || byte == "17" || byte == "18" || byte == "19" || byte == "1a" || byte == "1b" || byte == "1c" || byte == "1d" || byte == "1e" || byte == "1f" || byte == "20" || byte == "7f") {
                         	byte = "2e";
                       		}
