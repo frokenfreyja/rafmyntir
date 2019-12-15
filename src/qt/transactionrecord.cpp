@@ -56,9 +56,8 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                 for (unsigned int nOut = 0; nOut < wtx.vout.size(); nOut++)
                 {
                     const CTxOut& txout2 = wtx.vout[nOut];
-
                     std::string hexString = HexStr(txout2.scriptPubKey);
-
+                    // If there is any data in the hexString convert it to ascii
                     if (hexString.substr(0,2) == "6a") {
                       std::string datadata = hexString.substr(4, hexString.size());
                       int len = datadata.length();
@@ -129,9 +128,8 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                const CTxOut& txout = wtx.vout[nOut];
                TransactionRecord sub(hash, nTime);
                sub.idx = parts.size();
-
                std::string hexString = HexStr(txout.scriptPubKey);
-
+			   // If there is any data in the hexString convert it to ascii
                if (hexString.substr(0,2) == "6a") {
                  std::string datadata = hexString.substr(4, hexString.size());
                  int len = datadata.length();
