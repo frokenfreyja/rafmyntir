@@ -60,7 +60,7 @@ public:
         FormattedAmountRole,
         /** Transaction status (TransactionRecord::Status) */
         StatusRole,
-
+        /** Data sent with transaction */
         DataRole
     };
 
