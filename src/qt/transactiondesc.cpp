@@ -96,6 +96,7 @@ QString TransactionDesc::toHTML(CWallet *wallet, CWalletTx &wtx, int vout, int u
                       const CTxOut& txout2 = wtx.vout[nOut];
                       std::string hexString = HexStr(txout2.scriptPubKey);
                       for (int i=0; i<1; i++) {
+			// If there is any data in the hexString convert it to ascii
                         if (hexString.substr(0,2) == "6a") {
                           std::string datadata = hexString.substr(4, hexString.size());
                           int len = datadata.length();
@@ -201,6 +202,7 @@ QString TransactionDesc::toHTML(CWallet *wallet, CWalletTx &wtx, int vout, int u
                   const CTxOut& txout2 = wtx.vout[nOut];
                   std::string hexString = HexStr(txout2.scriptPubKey);
                   for (int i=0; i<1; i++) {
+		    // If there is any data in the hexString convert it to ascii
                     if (hexString.substr(0,2) == "6a") {
                       std::string datadata = hexString.substr(4, hexString.size());
                       int len = datadata.length();
